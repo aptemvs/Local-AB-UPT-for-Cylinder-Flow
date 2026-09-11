@@ -1,0 +1,2 @@
+seed: 42
+float32_matmul_precision: medium

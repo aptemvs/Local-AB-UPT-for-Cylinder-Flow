@@ -1,0 +1,14 @@
+defaults:
+  - train
+  - _self_
+
+datamodule:
+  data_dir: ${paths.data_dir}/exp00
+  target: delta
+
+model:
+  blocks: llllll
+  pos_embed: sincos
+
+trainer:
+  max_steps: 100000

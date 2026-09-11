@@ -1,0 +1,29 @@
+probe_rollout:
+  _target_: abupt.callbacks.ProbeRolloutCallback
+  num_trajectories: 2
+  num_steps: 100
+
+model_checkpoint:
+  _target_: lightning.pytorch.callbacks.ModelCheckpoint
+  dirpath: ${paths.output_dir}
+  filename: best
+  monitor: validation/probe_rmse50
+  mode: min
+  save_top_k: 1
+  save_last: true
+  auto_insert_metric_name: false
+  enable_version_counter: false
+
+step_checkpoint:
+  _target_: lightning.pytorch.callbacks.ModelCheckpoint
+  dirpath: ${paths.output_dir}/ckpts
+  filename: "step_{step:07d}"
+  every_n_train_steps: 5000
+  save_top_k: -1
+  save_weights_only: true
+  auto_insert_metric_name: false
+  enable_version_counter: false
+
+run_metrics:
+  _target_: abupt.callbacks.RunMetricsCallback
+  path: ${paths.output_dir}/metrics.json

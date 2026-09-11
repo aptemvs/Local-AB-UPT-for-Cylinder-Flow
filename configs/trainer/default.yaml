@@ -1,0 +1,10 @@
+_target_: lightning.Trainer
+max_steps: 200000
+max_epochs: -1
+val_check_interval: 5000
+check_val_every_n_epoch: null
+num_sanity_val_steps: 0
+precision: bf16-mixed
+accelerator: auto
+devices: 1
+log_every_n_steps: 50

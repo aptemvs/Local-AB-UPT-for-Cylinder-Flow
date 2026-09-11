@@ -1,0 +1,9 @@
+defaults:
+  - paths: default
+  - datamodule: comsol
+  - model: abupt
+  - trainer: default
+  - logger: csv
+  - callbacks: default
+  - extras: default
+  - _self_

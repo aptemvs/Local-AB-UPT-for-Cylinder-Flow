@@ -1,0 +1,18 @@
+_target_: abupt.lit_model.LitModel
+_convert_: all
+dim: 144
+num_heads: 3
+blocks: ssssssss
+local_radius: 0.1
+pos_embed: none
+position_scale: 1000.0
+position_max_wavelength: 1.0e4
+target: ${datamodule.target}
+num_anchors: ${datamodule.num_anchors}
+seed: ${extras.seed}
+learning_rate: 8.0e-4
+weight_decay: 5.0e-2
+adam_betas: [0.9, 0.95]
+warmup_frac: 0.05
+max_steps: ${trainer.max_steps}
+compile: true

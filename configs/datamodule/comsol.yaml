@@ -1,0 +1,11 @@
+_target_: abupt.datamodule.DataModule
+_convert_: all
+data_dir: ${paths.data_dir}/exp40
+batch_size: 16
+num_workers: 0
+num_anchors: 600
+num_queries: 1024
+noise_scale: 0.0
+target: absolute
+num_val_windows: 100
+seed: ${extras.seed}
